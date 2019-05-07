@@ -241,5 +241,6 @@ class Checkpoint:
             self.trainer.optimizer.load_state_dict(ckpt["optimizer"])
 
     def finalize(self):
+        print(type(self.trainer.model)
         torch.save(self.trainer.model, self.pth_filepath)
         torch.save(self.trainer.model.state_dict(), self.params_filepath)
